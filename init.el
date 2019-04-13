@@ -505,6 +505,10 @@ dump."
   )
 
 (defun dotspacemacs/user-config ()
+  (evil-escape-mode t)
+  (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-delay 0.2)
+  
   ;;解决org表格里面中英文对齐的问题
   (when (configuration-layer/layer-usedp 'chinese)
     (when (and (spacemacs/system-is-mac) window-system)
