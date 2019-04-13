@@ -22,6 +22,7 @@
         visual-regexp-steroids
         command-log
         evil
+        evil-escape
         fcitx
         discover-my-major
         ace-window
@@ -46,6 +47,12 @@
         symbol-overlay
         browse-at-remote
         ))
+
+(defun zilongshanren-misc/init-evil-escape ()
+  (use-package evil-escape
+    :init (evil-escape-mode t)
+    :config (progn (setq-default evil-escape-key-sequence "jk")
+                   (setq-default evil-escape-delay 0.2)))) 
 
 (defun zilongshanren-misc/post-init-expand-region ()
   (with-eval-after-load 'expand-region
